@@ -37,25 +37,11 @@ public class Game {
         while (true) {
             userMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isWin(gameTable, 'X')) {
-                System.out.println("YOU WIN");
-                break;
-            }
-            if (cellVerifier.isDraw((gameTable))) {
-                System.out.println("SORRY DRAW");
-                break;
-            }
+            System.out.println(dataPrinter.printWhoIsWin(gameTable));
+
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isWin(gameTable, 'O')) {
-                System.out.println("COMPUTER WIN");
-                break;
-            }
-            if (cellVerifier.isDraw(gameTable)) {
-                System.out.println("SORRY DRAW");
-                break;
-            }
+            System.out.println(dataPrinter.printWhoIsWin(gameTable));
         }
-        System.out.println("GAME OVER");
     }
 }

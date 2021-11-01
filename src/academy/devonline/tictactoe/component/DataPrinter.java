@@ -37,4 +37,20 @@ public class DataPrinter {
         }
         System.out.println("-------------");
     }
+
+    public Object printWhoIsWin(GameTable gameTable) {
+        CellVerifier cellVerifier = new CellVerifier();
+        WinnerVerifier winnerVerifier = new WinnerVerifier();
+        if (winnerVerifier.isWin(gameTable, '0')) {
+            return "COMPUTER WIN\nGAME OVER";
+        }
+        if (winnerVerifier.isWin(gameTable, 'X')) {
+            return "YOU WIN\nGAME OVER";
+        }
+        if (cellVerifier.isDraw(gameTable)) {
+            return "SORRY DRAW\nGAME OVER";
+        }
+        return null;
+    }
+
 }
