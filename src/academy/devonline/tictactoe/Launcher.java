@@ -10,7 +10,7 @@ public class Launcher {
         final Game game = new Game(
                 new DataPrinter(desktopNumericKeypadCellNumberConverter),
                 new ComputerMove(),
-                new UserMove(desktopNumericKeypadCellNumberConverter),
+                new UserMove(desktopNumericKeypadCellNumberConverter, new DataPrinter(desktopNumericKeypadCellNumberConverter)),
                 new WinnerVerifier(),
                 new CellVerifier()
         );

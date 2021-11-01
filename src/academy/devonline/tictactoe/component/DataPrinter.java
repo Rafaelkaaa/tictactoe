@@ -53,4 +53,12 @@ public class DataPrinter {
         return null;
     }
 
+    public String printMessageForUserMove() {
+        return "Please type number between 1 and 9:";
+    }
+
+    public String printMessageNotFreeCell() {
+        return "Can't make a move, because the cell is not free! Try again";
+    }
+
 }

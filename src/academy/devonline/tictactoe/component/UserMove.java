@@ -9,9 +9,11 @@ import java.util.Scanner;
 public class UserMove {
 
     private final CellNumberConverter desktopNumericKeypadCellNumberConverter;
+    private final DataPrinter dataPrinter;
 
-    public UserMove(CellNumberConverter desktopNumericKeypadCellNumberConverter) {
+    public UserMove(CellNumberConverter desktopNumericKeypadCellNumberConverter, DataPrinter dataPrinter) {
         this.desktopNumericKeypadCellNumberConverter = desktopNumericKeypadCellNumberConverter;
+        this.dataPrinter = dataPrinter;
     }
 
 
@@ -22,14 +24,14 @@ public class UserMove {
                 gameTable.setSign(cell, 'X');
                 return;
             } else {
-                System.out.println("Can't make a move, because the cell is not free! Try again");
+                System.out.println(dataPrinter.printMessageNotFreeCell());
             }
         }
     }
 
     private Cell getUserInput() {
         while (true) {
-            System.out.println("Please type number between 1 and 9:");
+            System.out.println(dataPrinter.printMessageForUserMove());
             final String userInput = new Scanner(System.in).nextLine();
             if (userInput.length() == 1) {
                 final char ch = userInput.charAt(0);
