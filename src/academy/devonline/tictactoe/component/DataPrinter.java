@@ -1,16 +1,17 @@
 package academy.devonline.tictactoe.component;
 
+import academy.devonline.tictactoe.keypad.CellNumberConverter;
 import academy.devonline.tictactoe.model.Cell;
 import academy.devonline.tictactoe.model.GameTable;
 
 public class DataPrinter {
 
 
-    public DataPrinter(CellNumberConverter cellNumberConverter) {
-        this.cellNumberConverter = cellNumberConverter;
+    public DataPrinter(CellNumberConverter desktopNumericKeypadCellNumberConverter) {
+        this.desktopNumericKeypadCellNumberConverter = desktopNumericKeypadCellNumberConverter;
     }
 
-    private final CellNumberConverter cellNumberConverter;
+    private final CellNumberConverter desktopNumericKeypadCellNumberConverter;
 
 
     public void printMappingTable() {
@@ -18,7 +19,7 @@ public class DataPrinter {
             System.out.println("-------------");
             for (int j = 0; j < 3; j++) {
                 System.out.print("| " +
-                        cellNumberConverter.toNumber(new Cell(i, j)) + ' ');
+                        desktopNumericKeypadCellNumberConverter.toNumber(new Cell(i, j)) + ' ');
             }
             System.out.println("| ");
         }

@@ -1,5 +1,6 @@
 package academy.devonline.tictactoe.component;
 
+import academy.devonline.tictactoe.keypad.CellNumberConverter;
 import academy.devonline.tictactoe.model.Cell;
 import academy.devonline.tictactoe.model.GameTable;
 
@@ -7,10 +8,10 @@ import java.util.Scanner;
 
 public class UserMove {
 
-    private final CellNumberConverter cellNumberConverter;
+    private final CellNumberConverter desktopNumericKeypadCellNumberConverter;
 
-    public UserMove(CellNumberConverter cellNumberConverter) {
-        this.cellNumberConverter = cellNumberConverter;
+    public UserMove(CellNumberConverter desktopNumericKeypadCellNumberConverter) {
+        this.desktopNumericKeypadCellNumberConverter = desktopNumericKeypadCellNumberConverter;
     }
 
 
@@ -33,7 +34,7 @@ public class UserMove {
             if (userInput.length() == 1) {
                 final char ch = userInput.charAt(0);
                 if (ch > '1' && ch < '9') {
-                    return cellNumberConverter.toCell(ch);
+                    return desktopNumericKeypadCellNumberConverter.toCell(ch);
                             }
                         }
                     }
