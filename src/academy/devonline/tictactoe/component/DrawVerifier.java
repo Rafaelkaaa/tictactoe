@@ -1,4 +1,4 @@
-package academy.devonline.tictactoe.ccomponent;
+package academy.devonline.tictactoe.component;
 
 import academy.devonline.tictactoe.model.GameTable;
 

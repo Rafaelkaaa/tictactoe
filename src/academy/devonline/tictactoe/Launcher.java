@@ -1,6 +1,6 @@
 package academy.devonline.tictactoe;
 
-import academy.devonline.tictactoe.ccomponent.*;
+import academy.devonline.tictactoe.component.*;
 
 public class Launcher {
     public static void main(String[] args) {

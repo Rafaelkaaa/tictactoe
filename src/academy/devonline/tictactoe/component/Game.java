@@ -1,4 +1,4 @@
-package academy.devonline.tictactoe.ccomponent;
+package academy.devonline.tictactoe.component;
 
 
 import academy.devonline.tictactoe.model.GameTable;
@@ -37,7 +37,7 @@ public class Game {
         while (true) {
             userMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isUserWin(gameTable)) {
+            if (winnerVerifier.isWin(gameTable, 'X')) {
                 System.out.println("YOU WIN");
                 break;
             }
@@ -47,7 +47,7 @@ public class Game {
             }
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isComputerWin(gameTable)) {
+            if (winnerVerifier.isWin(gameTable, 'O')) {
                 System.out.println("COMPUTER WIN");
                 break;
             }
