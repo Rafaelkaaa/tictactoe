@@ -69,7 +69,7 @@ public class WinnerVerifier {
         for (int i = 0; i < 3; i++) {
             int count = 0;
             for (int j = 2; j >= 0; j--) {
-                Cell cell = new Cell(i, j);
+                Cell cell = new Cell(j, i);
                 if (gameTable.getSign(cell) == symbol) {
                     count++;
                 }

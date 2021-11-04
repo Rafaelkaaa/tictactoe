@@ -34,7 +34,10 @@ public class Game {
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
         }
-        while (true) {
+        while (!winnerVerifier.isWin(gameTable, 'X') ||
+                !winnerVerifier.isWin(gameTable, '0') ||
+                !cellVerifier.isDraw(gameTable)) {
+
             userMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
             System.out.println(dataPrinter.printWhoIsWin(gameTable));
