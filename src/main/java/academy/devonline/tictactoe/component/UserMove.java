@@ -38,7 +38,7 @@ public class UserMove {
                 if (ch >= '1' && ch <= '9') {
                     return desktopNumericKeypadCellNumberConverter.toCell(ch);
                 }
-                        }
-                    }
-                }
             }
+        }
+    }
+}
