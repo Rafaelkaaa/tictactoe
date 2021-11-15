@@ -20,10 +20,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>academy.devonline</groupId>
-    <artifactId>tic-tac-toe1</artifactId>
+    <artifactId>tic-tac-toe</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>tic-tac-toe1</name>
+    <name>tic-tac-toe</name>
     <description>The Tic-Tac-Toe simple game using console mode</description>
     <url>http://devonline.academy/java</url>
     <organization>
@@ -46,9 +46,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/Rafaelkaaa/tictactoe.git</connection>
-        <developerConnection>scm:git:ssh://github.com:Rafaelkaaa/tictactoe.git</developerConnection>
-        <url>http://github.com/Rafaelkaaa/tictactoe/tree/master</url>
+        <connection>scm:git:git://github.com/devonline-academy/tic-tac-toe.git</connection>
+        <developerConnection>scm:git:ssh://github.com:devonline-academy/tic-tac-toe.git</developerConnection>
+        <url>http://github.com/devonline-academy/tic-tac-toe/tree/master</url>
     </scm>
 
     <properties>
@@ -66,6 +66,9 @@
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
+
+        <!-- Maven additional plugins -->
+        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
     </properties>
 
     <build>
@@ -92,7 +95,6 @@
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin.version}</version>
-
                     <configuration>
                         <archive>
                             <manifest>
@@ -120,5 +122,24 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/distribution-windows.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
